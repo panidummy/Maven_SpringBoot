@@ -6,6 +6,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -13,37 +15,37 @@ public class CalServiceTest
 {
     CalService cal =  new CalService();
     @Test
-    public void ShouldVerifyAddFunctionality()
+    public void shouldVerifyAddFunctionality()
     {
-        Assertions.assertEquals(50, cal.sum(20, 30));
+        assertEquals(50, cal.sum(20, 30));
         Assertions.assertNotEquals(50, cal.sum(30, 30));
     }
 
     @Test
-    public void ShouldVerifyMultiplyFunctionality()
+    public void shouldVerifyMultiplyFunctionality()
     {
-        Assertions.assertEquals(200, cal.multiply());
+        assertEquals(200, cal.multiply());
         Assertions.assertNotEquals(20, cal.multiply());
     }
 
     @Test
-    public void ShouldVerifySubtractionFunctionality()
+    public void shouldVerifySubtractionFunctionality()
     {
-        Assertions.assertEquals(10, cal.minus());
+        assertEquals(10, cal.minus());
         Assertions.assertNotEquals(20, cal.minus());
     }
 
     @Test
-    public void ShouldVerifyDivFunctionality()
+    public void shouldVerifyDivFunctionality()
     {
-        Assertions.assertEquals(2, cal.div());
+        assertEquals(2, cal.div());
         Assertions.assertNotEquals(20, cal.div());
     }
 
     @Test
-    public void ShouldVerifyCompoundMultiplyFunctionality()
+    public void shouldVerifyCompoundMultiplyFunctionality()
     {
-        Assertions.assertEquals(600, cal.compMultiply());
+        assertEquals(600, cal.compMultiply());
         Assertions.assertNotEquals(60, cal.compMultiply());
     }
 }
