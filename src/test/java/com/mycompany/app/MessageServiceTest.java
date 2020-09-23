@@ -13,10 +13,20 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 public class MessageServiceTest
 {
     @Test
-    public void shouldVerifyMessageService()
+    public void shouldVerifySayHello()
     {
         MessageService ms = new MessageService();
-        assertEquals("Hello", ms.sayHello());
+        assertEquals("Hello!", ms.sayHello());
         assertNotEquals("hello", ms.sayHello());
+    }
+
+    @Test
+    public void shouldVerifySayHelloWithSpecificName()
+    {
+        MessageService ms = new MessageService();
+        String expResult = "Hai There, Welcome to the team!";
+        String expResultSpecific = "Hai Ramu, Welcome to the team!";
+        assertEquals(expResultSpecific, ms.sayHello("Ramu"));
+        assertEquals(expResult, ms.sayHello("OtherName"));
     }
 }
