@@ -1,5 +1,6 @@
 
 //Establishing SSH connection to GCP VM. Created the GCP VM as slave node in Jenkins through SSH private key and Jenkins run this job using that slave node.
+// Refer Maven_SpringBoot/Jenkins_handson.docx document for detailed step by step process.
 node{
     def docker=tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
     def dockerCMD = "$docker/bin/docker"
